@@ -1,0 +1,264 @@
+Project 3
+NOTES FROM MODULE 23
+
+...build a performant and scalable MERN stack single-page application
+
+ fulfills a real-world need, with a focus on data and user demand
+
+combine a scalable 
+	MongoDB back end, 
+	a GraphQL API, and an 
+	Express.js and 
+	Node.js server with a 
+	React front end
+
+user authentication with JWT to build a user-focused platform.
+
+agile development methodologies
+	storing your project code in GitHub
+	managing your work with a project management tool,
+	implementing feature and bug fixes using the Git branch workflow and pull requests.
+
+you should start from scratch
+
+
+The requirements for this project ask you to use the skills and technologies you’ve learned over
+ the past six weeks, including the following:
+
+Performant JavaScript
+NoSQL databases
+React single-page applications
+GraphQL APIs
+Concurrent servers in a MERN app
+Authentication
+
+
+Your project should fulfill the following requirements:
+
+Use React for the front end.
+
+Use GraphQL with a Node.js and Express.js server.
+
+Use MongoDB and the Mongoose ODM for the database.
+
+Use queries and mutations for retrieving, adding, updating, and deleting data.
+
+Be deployed using Heroku (with data).
+
+Have a polished UI.
+
+Be responsive.
+
+Be interactive (i.e., accept and respond to user input).
+
+Include authentication (JWT).
+
+Protect sensitive API key information on the server.
+
+Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, etc.).
+
+Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+
+
+EXTRAS
+CSS Styling
+Instead of using a CSS library like Bootstrap, consider one of the following suggestions:
+
+Look into the concept of CSS-in-JS, which abstracts CSS to the component level, using JavaScript to 
+describe styles in a declarative and maintainable way. Some popular libraries include styled-components
+ (https://styled-components.com/) and Emotion (https://emotion.sh/docs/introduction).
+
+Try using a component library, such as Semantic UI (https://semantic-ui.com/), 
+Chakra UI (https://chakra-ui.com/), or Ant Design (https://ant.design/).
+
+Create all the CSS for your application just using CSS.
+
+Payment Platform
+Consider integrating the Stripe payment platform. Even if you don’t create an e-commerce application, 
+you could set up your site to accept charitable donations.
+
+Bonus
+Although this is not a requirement for your project, see if you can also implement functionality to meet 
+the minimum requirements of a PWA:
+
+Uses a web manifest
+
+Uses a service worker for offline functionality
+
+Is installable
+
+ZZZZZZZZZZZZZZZZZZZZZZZZZ
+
+POWERPOINT DRAFT MADE ON 5-12-22 BY CLC- REVISE AND TRANSFER TO PROJECT PRESENTATION TEMPLATE
+
+ZZZZZZZZZZZZZZZZZZZZZZZZ
+
+Presentation Requirements
+Your group will give a 10-minute presentation on your project, with about 7 minutes devoted to the 
+presentation itself, followed by a 3-minute Question & Answer session. Use this Project Presentation 
+	Template (Links to an external site.) to address the following:
+	Elevator pitch: A one-minute description of your application.
+	Concept: What is your user story? What was your motivation for development?
+	Process: 
+		What technologies did you use? 
+		How did you break down and assign tasks and roles? 
+		What challenges did you encounter? 
+		What were your successes?
+
+Demo: Show your stuff!
+
+Directions for future development.
+
+Links to the deployed application and the GitHub repository.
+
+
+Where to Find Help in the Curriculum
+You might find that you need to review certain skills to meet the project requirements. The following tips
+ can help you refresh your knowledge and overcome any obstacles you encounter.
+
+Setting Up a Project with React
+For a reminder on how to set up an application using React, review 
+	Module 20: React, Lesson 1: Create React Components 
+		(especially 20.1.3: Set Up the Project Using create-react-app) and 
+	Module 21: MERN, Lesson 3: Integrate the Client 
+		(especially 21.3.3: Create React App and Integrate Premade Components).
+
+ZZZZZZZZZZZZZZ
+
+CLC - MONGODB AND MONGOOSE
+ZZZZZZZZZZZZZZZZZZZZZZZ
+
+MongoDB and Mongoose
+For a refresher on adding a MongoDB database and the Mongoose ODM to your application, review all of 
+	Module 18: NoSQL, but especially 
+		Lesson 1: Set Up the User Model, 
+		Lesson 2: Add Comments, 
+		Lesson 3: Set Up Replies,and 
+		Lesson 5: Add Mongoose Validation.
+
+ZZZZZZZZZZZZZZZZZZZ
+
+
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+
+GraphQL API, queries, and mutations Review 
+	Module 21: MERN, 
+		Lesson 1: Set Up Apollo Server and 
+		Lesson 2: GraphQL Mutations for a refresher on how to 
+			add a GraphQL API and 
+			queries and mutations to your application.
+
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+
+
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+
+JWT Authentication
+For a reminder on how to add authentication with JWT to an application, review 
+	Module 21: MERN, 
+		Lesson 2:GraphQL Mutations 
+			(especially 21.2.4 Authorize Users with JWTs) and all of 
+		Lesson 5: Add Front-End User Authentication.
+
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+
+
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+
+Deploying a MERN Stack App to Heroku Review 
+	Module 21: MERN, 
+		Lesson 6: Add More Forms and Buttons 
+			(especially 21.6.7 Deploy to Heroku) and 
+		Module 18: NoSQL, 
+			Lesson 5: Add Mongoose Validation 
+				(especially 18.5.5 Deploy to Heroku) to get a refresher on deploying to Heroku.
+
+
+
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+
+Showing results for how to insert a sound effect into powerpoint
+Search instead for how to insert a sound effect into power point
+
+In Normal view, click the slide that you want to add a sound to. On the Insert tab, 
+in the Media group, click the arrow under Audio. In the list, click Audio from file 
+or Clip Art audio, locate and select the audio clip that you want, and then click Insert. 
+The audio icon and controls appear on the slide.
+
+
+
+Pond ambience with crickets
+
+https://mixkit.co/free-sound-effects/crickets/#:~:text=Pond%20ambience%20with%20crickets
+
+
+https://mixkit.co/free-sound-effects/crickets/
+
+
+To insert the copyright symbol, press Ctrl+Alt+C. To insert the trademark symbol, press Ctrl+Alt+T.
+ To insert the registered trademark symbol, press Ctrl+Alt+R.
+
+POWERPOINT SHORTCUTS
+
+(c) For the Copyright Symbol ©
+(tm) For the Trademark Symbol ™
+(r) For the Registered Trademark Symbol ®
+(e) For the Euro symbol €
+: – ) (without any spaces) For the Emoji Smile 🙂
+: – | (without any spaces) For the Emoji Shrug 😐
+: – ( (without any spaces) For the Emoji Sad 🙁
+<– For a Thin left arrow 
+<== For a Thick left arrow 
+–> For a Thin right arrow 
+==> For a Thick right arrow 
+
+
+party crowd:
+https://mixkit.co/free-sound-effects/party/#:~:text=Very%20crowded%20pub%20or%20party%20loop
+
+SOCIAL ANXIETY SYMPTOMS
+
+https://www.mayoclinic.org/diseases-conditions/social-anxiety-disorder/symptoms-causes/syc-20353561
+
+
+bee image
+
+https://kabramkrafts.com/2020/02/free-bee-svg-download-ha-bee-birthday/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

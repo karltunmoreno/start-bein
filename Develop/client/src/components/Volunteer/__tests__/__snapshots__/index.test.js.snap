@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gallery is rendering matches snapshot DOM node stucture 1`] = `
+<DocumentFragment>
+  <section>
+    <h1
+      data-testid="h1tag"
+    >
+      Business-finance
+    </h1>
+    <p>
+      Digital asset tracker app; physical offices, a bank, and a medical project
+    </p>
+    <div>
+      <div
+        class="flex-row"
+      >
+        <img
+          alt="Asset graph"
+          class="img-thumbnail mx-1"
+          src="0.jpg"
+        />
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;

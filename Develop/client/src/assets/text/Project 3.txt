@@ -319,9 +319,110 @@ SET-UP MUTATIONS AND JWT LOGIC
 AS A USER I CAN CREATE MY OWN ACCOUNT AND LOGIN
 AS A LOGGED-IN USER, I CAN CREATE AND REACT TO THOUGHTS AND ADD FRIENDS
 
+FOLLOWING SET-UP LOGIC FROM MOD 21 APPLIED TO 21 CHALLENGE AND START-BEIN 
 
+SUBMITTED ON 5-26-22 @ 4:20 EST
+DEVELOP/SERVER/MODELS/USER
+USER MODEL DESIGN HERE:
 
+//STATEMENT FOR IMPORT WHEN THE APP USES SOME SCHEMAS THAT WILL NOT BE FULL MODELS-CONSIDER IF TYPE IS NEEDED AS WELL
+const { Schema, model } = require
+//ENCRYPTION REQUIRED-SEE BELOW FOR MONGOOSE SET-UP CODE
+const bcrypt = require('bcrypt');
 
+//USER SCHEMA
+const userSchema = new Schema(
+    {
+        username: {
+
+        },
+        email: {
+
+        },
+        password: {
+
+        },
+        //THIS IS SIMILAR TO 'PIZZA' IN 'PIZZA HUNT'
+        starts: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Start'
+            }
+        ],
+        //THIS IS SIMILAR TO 'COMMENTS' IN 'PIZZA HUNT'
+        contributions: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Contribute'
+            }
+        ],
+        //THIS IS NEW TO MAKE OUR OWN "CURRENCY" OR POINTS 
+        beins: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'User'
+            }
+        ],
+        friends: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'User'
+            }
+        ],
+    },
+    {
+        //CHECK IF WE NEED GETTERS
+        toJSON: {
+            virtuals: true
+        }
+    }
+
+);
+
+//HASH USER PASSWORD
+userSchema.pre('save', async function (next) {
+    if (this.isNew || this.isModified('password')) {
+        const saltRounds = 10;
+        this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+
+    next();
+});
+
+//METHOD TO COMPARE AND VALIDATE INCOMING PASSWORD WITH THE HASHED PASSWORD TO LOGIN
+userSchema.methods.isCorrectPassword = async function(password) {
+    return bcrypt.compare(password, this.password);
+};
+
+//QUERY A USER AND RECEIVE COUNTS FOR OUR SCHEMAS THAT ARE VIRTUALS - 
+
+//BEINS ARE BASED ON GOOGLEBOOKS USER MODEL FOR BOOK SCHEMA - SAVEDBOOKS=SAVED BEINS- SO ANY SAVED RESOURCES FROM VOLUNTEER GROUPS OR ORG TO DONATE WOULD MAKE A BEIN COUNT? - OR IT COULD BE BASED ON OTHER USER REACTIONS TO OUR STARTS AND CONTRIBUTIONS
+userSchema.virtual('beinCount').get(function () {
+    return this.savedBeins.length;
+});
+
+//FRIENDS - TYPICAL
+userSchema.virtual('friendCount').get(function() {
+    return this.friends.length;
+});
+
+//EXPORT STATEMENTS
+const User = model('User', userSchema);
+
+module.exports = User;
+
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+
+MAKING SURE MONGO IS SET-UP CORRECTLY
+
+mongod == the database server, mongo == interactive shell – 
+WiredPrairie
+ Aug 26, 2013 at 20:52
+This (docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x) actually covers setup and using the shell. – 
+WiredPrairie
+ Aug 26, 2013 at 20:53
+
+https://blog.logrocket.com/the-perfect-architecture-flow-for-your-next-node-js-project/
 
 
 

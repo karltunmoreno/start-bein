@@ -411,9 +411,18 @@ const User = model('User', userSchema);
 
 module.exports = User;
 
+ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 
+MAKING SURE MONGO IS SET-UP CORRECTLY
 
+mongod == the database server, mongo == interactive shell – 
+WiredPrairie
+ Aug 26, 2013 at 20:52
+This (docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x) actually covers setup and using the shell. – 
+WiredPrairie
+ Aug 26, 2013 at 20:53
 
+https://blog.logrocket.com/the-perfect-architecture-flow-for-your-next-node-js-project/
 
 
 

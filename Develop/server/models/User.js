@@ -1,5 +1,5 @@
 //STATEMENT FOR IMPORT WHEN THE APP USES SOME SCHEMAS THAT WILL NOT BE FULL MODELS-CONSIDER IF TYPE IS NEEDED AS WELL
-const { Schema, model } = require
+// const { Schema, model } = require
 //ENCRYPTION REQUIRED-SEE BELOW FOR MONGOOSE SET-UP CODE
 const bcrypt = require('bcrypt');
 

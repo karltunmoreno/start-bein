@@ -1,6 +1,6 @@
 //SERVER TO DB SET-UP EXAMPLE FROM GOOGLEBOOKS-AND DEEP-THOUGHTS MERGED WITH BUDGET TRACKER
 //HERE WE USE 2-PART STRUCTURE NEEDS A CONFIG DIRECTORY AND CONNECTION.JS FILE TO SEPARATE MONGOOSE
-
+const mongoose = require('mongoose')
 const express = require('express');
 const path = require('path');
 const db = require('./config/connection');
@@ -12,8 +12,14 @@ const PORT = process.env.PORT || 3001;
 //ONE SERVER PROJECTS CAN PUT THEIR DB CONNECTION HERE W/O A CONFIG DIR
 // const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/start-bein";
 
+//SETTING UP MONGOOSE MOD 18 SHORT CIRCUIT TO mongodb://localhost:27017/pizza-hunt
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/start-bein', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
 //THIS IS FROM BUDGET-TRACKER
-// app.use(logger("dev"));
+app.use(logger("dev"));
 
 app.use(compression());
 app.use(express.urlencoded({ extended: true }));
@@ -32,9 +38,9 @@ db.once('open', () => {
 });
 
 //LOG MONGO QUERIES EXECUTED-MOVED TO CONFIG CONNECTION - KEEP FOR 1 SERVER
-// mongoose.set('debug', true);
+mongoose.set('debug', true);
 
 //FROM BUDGET-TRACKER REDUNDANT HERE BUT KEEP- MAY BE BETTER FOR 1 SERVER
-// app.listen(PORT, () => {
-//     console.log(`🌍 Connected on port ${PORT}!`);
-// });
+app.listen(PORT, () => {
+    console.log(`🌍 Connected on port ${PORT}!`);
+});

@@ -9,7 +9,7 @@ const logger = require("morgan");
 const compression = require("compression");
 
 const PORT = process.env.PORT || 3001;
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/budget";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bein";
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/budget', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/bein', {
     /** useNewUrlParser false by default. Set to `true` to make all connections set the `useUnifiedTopology` option by default */
     useNewUrlParser: true,
     /** Set use FindAndModify to `true` to make Mongoose automatically call `createCollection()` on every model created on this connection. */

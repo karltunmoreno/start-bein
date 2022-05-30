@@ -36,6 +36,11 @@ const typeDefs = gql`
     startbein(_id: ID!): Startbein
   }
 
+  type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+  }
+
 `;
 
 

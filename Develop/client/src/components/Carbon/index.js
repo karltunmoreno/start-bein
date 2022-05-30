@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Thermostat from "../Thermostat/index";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import coverImage from "../../assets/images/logo370.png";
 
@@ -24,10 +24,6 @@ function Carbon() {
     </section>
   );
 }
-
-
-
-
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

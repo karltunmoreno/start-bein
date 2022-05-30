@@ -7,12 +7,8 @@ function Thermostat() {
 
   // Use useEffect hook to set the document.title to the current temp, add here the API
   useEffect(() => {
-
-    
     document.title = `${temp}° Fahrenheit`;
   });
-
-
 
   // Handler for increasing the temp by 1
   const increaseTemp = () => {

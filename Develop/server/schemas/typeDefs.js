@@ -4,24 +4,37 @@ const { gql } = require('apollo-server-express');
 //CREATE
 const typeDefs = gql`
 
-    type Contribute {
-        _id: ID
-        thoughtText: String
-        createdAt: String
-        username: String
-        reactionCount: Int
-    }
+  type User {
+    _id: ID
+    username: String
+    email: String
+    friendCount: Int
+    startbeins: [Startbein]
+    friends: [User]
+  }
 
-    type Reaction {
-      _id: ID
-      reactionBody: String
-      createdAt: String
-      username: String
-    }
+  type Startbein {
+    _id: ID
+    startbeinText: String
+    createdAt: String
+    username: String
+    contributeCount: Int
+    contributes: [Contribute]
+  }
 
-    type Query {
-      contributes: [Contribute]
-    }
+  type Contribute {
+    _id: ID
+    contributeBody: String
+    createdAt: String
+    username: String
+  }
+
+  type Query {
+    users: [User]
+    user(username: String!): User
+    startbeins(username: String): [Startbein]
+    startbein(_id: ID!): Startbein
+  }
 
 `;
 

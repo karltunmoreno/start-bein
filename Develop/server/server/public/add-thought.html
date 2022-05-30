@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Recipe</title>
+  <link
+    href="https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap&family=Karla:400,700|Rubik:400,400i,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <header class="py-3 mb-3">
+    <div class="flex-row justify-space-between align-center container-fluid mx-auto">
+      <a href="/">
+        <h1 class="text-light bg-dark py-3 px-4 logo round-25-80">bein</h1>
+      </a>
+
+      <h3 class="text-light bg-dark p-3 round-25-80">
+        Create Your Own thought
+      </h3>
+    </div>
+  </header>
+
+  <main class="container-fluid flex-row mx-auto justify-space-between">
+    <div class="col-12 py-3 px-4 my-4 bg-dark round-25-80">
+      <h2 class="text-light">Streaming thoughts, all things good and green! (aka bein)</h2>
+    </div>
+
+    <section class="bg-dark p-3 col-12 col-lg-8 mb-3 round-25-80">
+      <h2 class="text-light ">Let's start inspiring each other!</h2>
+      <div class="col-12 col-lg-6 bg-dark p-3 mb-3">
+        <div class="form-container">
+          <form id="thought-form">
+            <div class="mb-2">
+              <label for="thought-name" class="form-label">thought Name</label>
+              <input type="text" id="thought-name" name="thought-name" class="form-input"
+                placeholder="Enter thought Name" required />
+            </div>
+            <div class="mb-2">
+              <label for="created-by" class="form-label">Who's Beautiful Idea is This?</label>
+              <input type="text" id="created-by" name="created-by" class="form-input" placeholder="Give us your name"
+                required />
+            </div>
+            <div class="mb-2">
+              <label for="thought-thoughtText" class="form-label">thought thoughtText (select from dropdown)</label>
+              <select id="thought-thoughtText" class="form-input">
+                <option value="Personal">Personal</option>
+                <option value="Small">City</option>
+                <option value="Medium">State</option>
+                <option value="Large">Country</option>
+                <option value="Extra Large">Global</option>
+              </select>
+            </div>
+            <h3 class="text-tertiary">Choose your keywords</h3>
+            <div class="flex-row justify-space-between">
+              <div class="col-auto">
+                <div>
+                  <input type="checkbox" id="health" name="keyword" value="health">
+                  <label for="health">health</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="philosophy" name="keyword" value="philosophy">
+                  <label for="philosophy">philosophy</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="live-work" name="keyword" value="live-work">
+                  <label for="live-work">live-work</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="foodies" name="keyword" value="foodies">
+                  <label for="foodies">foodies</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="money" name="keyword" value="money">
+                  <label for="money">money</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="gardening" name="keyword" value="gardening">
+                  <label for="gardening">gardening</label>
+                </div>
+              </div>
+
+              <div class="col-auto">
+                <div>
+                  <input type="checkbox" id="dreams" name="keyword" value="dreams">
+                  <label for="dreams">dreams</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="vacation" name="keyword" value="vacation">
+                  <label for="vacation">vacation</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="books" name="keyword" value="books">
+                  <label for="books">books</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="chores" name="keyword" value="chores">
+                  <label for="chores">chores</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="kids" name="keyword" value="kids">
+                  <label for="kids">kids</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="cats" name="keyword" value="cats">
+                  <label for="cats">cats</label>
+                </div>
+              </div>
+
+              <div class="col-auto">
+                <div>
+                  <input type="checkbox" id="dogs" name="keyword" value="dogs">
+                  <label for="dogs">dogs</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="home" name="keyword" value="home">
+                  <label for="home">home</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="family" name="keyword" value="family">
+                  <label for="family">family</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="languages" name="keyword" value="languages">
+                  <label for="languages">languages</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="sports" name="keyword" value="sports">
+                  <label for="sports">sports</label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="movies" name="keyword" value="movies">
+                  <label for="movies">movies</label>
+                </div>
+              </div>
+
+              <!-- custom keywords -->
+              <div class="col-auto">
+                <div id="custom-keywords-list"></div>
+              </div>
+            </div>
+
+            <div class="w-100 display-block"></div>
+
+            <label for="new-keyword" class="form-label">Add another keyword to the list!</label>
+            <input type="text" id="new-keyword" name="new-keyword" class="form-input" placeholder="Add keyword" />
+
+            <button type="button" id="add-keyword" class="btn">Add keyword</button>
+
+            <div class="my-4 border-light-top display-block w-100"></div>
+
+            <button type="submit" class="btn w-100 m-auto">Submit Conversation Starter</button>
+          </form>
+        </div>
+    </section>
+
+    <section class="bg-dark p-3 col-12 col-lg-4 mb-3 round-25-80 min-60-vh">
+      <h2 class="text-light px-2">Looking to do something else?</h2>
+      <nav>
+        <a class="btn display-block round-25-80" href="/">See All thoughts.</a>
+      </nav>
+    </section>
+
+    </div>
+  </main>
+  <script src="./assets/js/add-thought.js"></script>
+</body>
+
+</html>

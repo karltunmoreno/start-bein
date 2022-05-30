@@ -1,8 +1,8 @@
 //BUDGET TRACKER
 
-module.exports = {
-    Transaction: require("./Transaction")
-}
+// module.exports = {
+//     Transaction: require("./Transaction")
+// }
 
 //GOOGLEBOOKS
 

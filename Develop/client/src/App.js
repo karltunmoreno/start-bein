@@ -3,6 +3,8 @@ import "./App.css";
 import About from "./components/About/index";
 import Carbon from "./components/Carbon/index";
 import Thermostat from "./components/Thermostat/index";
+import Form from "./components/Form/index";
+import Footer from "./components/Footer/index";
 
 function App() {
   return (
@@ -25,9 +27,14 @@ function App() {
             </span>
           </p>
         </header>
+
         <About></About>
         <Carbon></Carbon>
+
+        <Form></Form>
         <Thermostat></Thermostat>
+
+        <Footer></Footer>
       </div>
     )
   );

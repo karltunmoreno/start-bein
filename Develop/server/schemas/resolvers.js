@@ -5,13 +5,17 @@ const { User, Startbein, Contribute } = require('../models');
 
 const resolvers = {
     Query: {
-        me: async (parent, args) => {
-            const userData = await User.findOne({})
-                .select('-__v -password')
-                .populate('startbeins')
-                .populate('friends');
+        me: async (parent, args, context) => {
+            if (context.user) {
+                const userData = await User.findOne({ _id: context.user._id })
+                    .select('-__v -password')
+                    .populate('thoughts')
+                    .populate('friends');
 
-            return userData;
+                return userData;
+            }
+
+            throw new AuthenticationError('Not logged in');
         },
 
         //ALL
@@ -93,7 +97,7 @@ const resolvers = {
 
             throw new AuthenticationError('You need to be logged in!');
         },
-        
+
         addFriend: async (parent, { friendId }, context) => {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(

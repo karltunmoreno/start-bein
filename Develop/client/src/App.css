@@ -28,6 +28,53 @@
   color: #61dafb;
 }
 
+.donatehero {
+  min-height: 20vh;
+  background-image: url("https://lirp.cdn-website.com/e216b10c/dms3rep/multi/opt/Screen+Shot+2018-05-10+at+1.26.28+PM-1920w.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+
+}
+
+.donatehero h1 {
+  font-size: calc(10px + 2vmin);
+  color: #ffff;
+  text-shadow: 3px 2px black;
+}
+
+.donosection {
+  background-color: rgba(238,207,188, .5);
+  margin: 5vh;
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 2%;
+  padding: 2vh;
+  display: flex;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+
+.donos {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.donos button {
+  background-color: rgba(238,207,188, .5);
+  margin: 1vh;
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 5%;
+  transition: all 300ms;
+}
+
+.donos button:hover {
+  transform: scale(1.3) perspective(1px);
+  transition: all 300ms;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 1);
+  background-color: rgba(238,207,188, 1);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

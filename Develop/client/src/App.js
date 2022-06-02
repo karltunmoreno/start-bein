@@ -1,12 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5821c70005e9ce5ca521407b7d247e792ef9a27d
 import './App.css';
-import Page from './components/Donate/index';
+import Page from './components/Volunteer/Page';
 
 function App() {
   return (
     <div className="App">
-      <Page/>
+      <Page />
     </div>
 =======
 import logo from "./logo.png";
@@ -54,4 +57,3 @@ function App() {
 
 export default App;
 
- 

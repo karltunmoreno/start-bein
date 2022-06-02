@@ -16,6 +16,8 @@
     "web-vitals": "^2.1.4",
     "website-carbon-calculator": "^1.2.7",
     "yarn": "^1.22.18"
+    "rmwc": "^7.0.3",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

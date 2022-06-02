@@ -8,10 +8,10 @@ const { Schema, model, Types } = require('mongoose');
 
 //UNIQUE VALIDATOR FROM https://www.codegrepper.com/code-examples/javascript/mongoose+required+unique+validator
 var mongoose = require('mongoose');
-var uniqueValidator = require('mongoose-unique-validator');
+    // var uniqueValidator = require('mongoose-unique-validator');
 
-var mySchema = mongoose.Schema(/* put your schema definition here */);
-mySchema.plugin(uniqueValidator);
+    // var mySchema = mongoose.Schema(/* put your schema definition here */);
+    // mySchema.plugin(uniqueValidator);
 
 //EMAIL VALIDATOR STATEMENTS FROM https://www.codegrepper.com/code-examples/whatever/mongoose+validate+match+regex
 var validateEmail = function (email) {
@@ -109,7 +109,7 @@ userSchema.virtual('friendCount').get(function () {
 });
 
 //ADD VIRTUAL TO COUNT AND TRACK NUMBER OF STARTS AND LINKED CONTRIBUTES MADE ON RETRIEVAL TEST
-UserSchema.virtual('startCount').get(function () {
+userSchema.virtual('startCount').get(function () {
     return this.starts.reduce((total, thought) => total + start.contributes.length + 1, 0);
 });
 

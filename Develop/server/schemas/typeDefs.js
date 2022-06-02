@@ -1,7 +1,5 @@
-//IMPORT GQL FUNCTION
 const { gql } = require('apollo-server-express');
 
-//CREATE
 const typeDefs = gql`
 
   type User {
@@ -58,10 +56,6 @@ const typeDefs = gql`
       friendId: ID!
       ): User
   }
-  // type Mutation {
-  //   login(email: String!, password: String!): Auth
-  //   addUser(username: String!, email: String!, password: String!): Auth
-  // }
 
   type Auth {
     token: ID!
@@ -70,7 +64,4 @@ const typeDefs = gql`
 
 `;
 
-
-
-//EXPORT TYPEDEFS
 module.exports = typeDefs;

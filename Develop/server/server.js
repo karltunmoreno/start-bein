@@ -52,8 +52,6 @@ app.use(express.json());
 // }
 
 
-//THIS MAY HAVE TO BE REMOVED FOR NEW MIDDLEWARE ITS IN GOOGLEBOOKS-NOT DEEP-THOUGHTS
-// app.use(routes);
 
 //NEW INSTANCE OF AN APOLLO SERVER W GRAPHQL CHEMA
 const startApolloServer = async (typeDefs, resolvers) => {
@@ -74,12 +72,6 @@ const startApolloServer = async (typeDefs, resolvers) => {
 
 
 
-//LOG MONGO QUERIES EXECUTED-MOVED TO CONFIG CONNECTION - KEEP FOR 1 SERVER
-// mongoose.set('debug', true);
-//FROM BUDGET-TRACKER REDUNDANT HERE BUT KEEP- MAY BE BETTER FOR 1 SERVER
-// app.listen(PORT, () => {
-//     console.log(`🌍 Connected on port ${PORT}!`);
-// });
 
 //CALL ASYNC TO START THE SERVER
 startApolloServer(typeDefs, resolvers);
@@ -97,22 +89,8 @@ mongoose.connect(
 // routes
 app.use(require("./routes"));
 
-const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri =
-  "mongodb+srv://ChristiLewis:Wlrdy4pkxWj7dabC@cluster0.ihk9u.mongodb.net/budget?retryWrites=true&w=majority";
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  serverApi: ServerApiVersion.v1,
-});
-client.connect((err) => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
 });
 
-//LOG MONGO QUERIES EXECUTED
-mongoose.set("debug", true);
 
 app.listen(PORT, () => {
   console.log(`🌍 Connected on port ${PORT}!`);

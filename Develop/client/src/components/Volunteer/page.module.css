@@ -20,8 +20,10 @@ width: 100%;
 }
 
 .mainContainer{
-text-align: justify;
+text-align: center;
 padding: 10px 20px;
+border-style: solid;
+font-weight: bold;
 
 }
 
@@ -43,7 +45,8 @@ padding: 10px 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content:space-between;
+    /*justify-content:space-between;*/
+    justify-content:flex-start;
     
 }
 

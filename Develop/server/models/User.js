@@ -7,11 +7,11 @@ const bcrypt = require('bcrypt');
 const { Schema, model, Types } = require('mongoose');
 
 //UNIQUE VALIDATOR FROM https://www.codegrepper.com/code-examples/javascript/mongoose+required+unique+validator
-var mongoose = require('mongoose');
-var uniqueValidator = require('mongoose-unique-validator');
+// var mongoose = require('mongoose');
+// var uniqueValidator = require('mongoose-unique-validator');
 
-var mySchema = mongoose.Schema(/* put your schema definition here */);
-mySchema.plugin(uniqueValidator);
+// var mySchema = mongoose.Schema(/* put your schema definition here */);
+// mySchema.plugin(uniqueValidator);
 
 //EMAIL VALIDATOR STATEMENTS FROM https://www.codegrepper.com/code-examples/whatever/mongoose+validate+match+regex
 var validateEmail = function (email) {
@@ -109,8 +109,13 @@ userSchema.virtual('friendCount').get(function () {
 });
 
 //ADD VIRTUAL TO COUNT AND TRACK NUMBER OF STARTS AND LINKED CONTRIBUTES MADE ON RETRIEVAL TEST
+<<<<<<< HEAD
 UserSchema.virtual('startbeinCount').get(function () {
     return this.startbeins.reduce((total, startbein) => total + startbein.contributes.length + 1, 0);
+=======
+userSchema.virtual('startCount').get(function () {
+    return this.starts.reduce((total, thought) => total + start.contributes.length + 1, 0);
+>>>>>>> 65502bdb1543825e1ef1dad8be889f553573fca0
 });
 
 //MAKE THE MODEL

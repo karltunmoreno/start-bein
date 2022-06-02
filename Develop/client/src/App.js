@@ -10,7 +10,8 @@ import About from './components/About/index';
 import Carbon from './components/Carbon/index';
 import Form from './components/Form/index';
 import Thermostat from './components/Thermostat/index';
-import Volunteer from './components/Volunteer/index';
+import Volunteer from './components/Volunteer/VolunteerInfo';
+import Footer from './components/Footer/index';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
@@ -44,8 +45,12 @@ function App() {
           <Page />
           <About />
           <Carbon />
+          <Form />
+          <Thermostat />
+          <Volunteer/>
+          <Footer />
         </div>
-        
+
       </div>
     </ApolloProvider>
   );

@@ -2,25 +2,22 @@
 //ONLY IMPORT WHAT YOU NEED FROM THE MONGOOSE LIBRARY
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
+const ContributeSchema = require('./Contribute');
 
 const StartbeinSchema = new Schema(
     {
 
-        startbeinName: {
-            type: String,
-            trim: true,
-            required: 'A title is required!'
-        },
+        // startName: {
+        //     type: String,
+        //     trim: true,
+        //     required: 'A title is required!'
+        // },
 
-        createdBy: {
-            type: String,
-            trim: true,
-            required: 'An author is required'
-
-            //username (The user that created this startbein)
-            //String
-            //Required
-        },
+        // createdBy: {
+        //     type: String,
+        //     trim: true,
+        //     required: 'An author is required'
+        // },
 
         createdAt: {
             type: Date,
@@ -40,25 +37,30 @@ const StartbeinSchema = new Schema(
             //Required
             //Must be between 1 and 280 characters
         },
-        keywords: [],
 
+        username: {
+            type: String,
+            required: true
+        },
+        contributes: [ContributeSchema],
 
-        contributes: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'contribute'
-            }
-        ]
+        //ELIMINATED VIRTUAL SCHEMA TO SIMPLIFY
+        // contributes: [
+        //     {
+        //         type: Schema.Types.ObjectId,
+        //         ref: 'contribute'
+        //     }
+        // ]
 
     },
     {
         toJSON: {
-            virtuals: true,
+            // virtuals: true,
             //ACTIVATE GETTERS FOR THE DATEFORMAT FUNCTIONALITY
             getters: true
         },
         //MONGOOSE RETURNS THIS VIRTUAL SO THE ID IS NA
-        id: false
+        // id: false
     }
 
 );

@@ -17,13 +17,18 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 //NEW APOLLO SERVER
-const server = new ApolloServer({
+const startServer = async () => {
+  const server = new ApolloServer({
     typeDefs,
     resolvers,
-    //ADD CONTEXT AS AUTHMIDDLEWARE FOR JWT
-    context: authMiddleware
-});
+    context: authMiddleware,
+  });
+  await server.start();
+  server.applyMiddleware({ app });
+  console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+};
 
+startServer()
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -34,64 +39,29 @@ app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 
 
-
-//ONE SERVER PROJECTS CAN PUT THEIR DB CONNECTION HERE W/O A CONFIG DIR
-// const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/start-bein";
-//SETTING UP MONGOOSE MOD 18 SHORT CIRCUIT 
-// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/start-bein', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// });
-
-//THIS IS FROM BUDGET-TRACKER
-// app.use(logger("dev"));
-
 // THIS IS IMPORTANT FOR THE CLIENT-SERVER SPLIT if we're in production, serve client/build as static assets
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static(path.join(__dirname, '../client/build')));
-// }
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
-
-//NEW INSTANCE OF AN APOLLO SERVER W GRAPHQL CHEMA
+//NEW INSTANCE OF AN APOLLO SERVER W GRAPHQL SCHEMA-UPDATED ABOVE
 const startApolloServer = async (typeDefs, resolvers) => {
-    await server.start();
-    //MIDDLEWARE
-    server.applyMiddleware({ app });
-
-    db.once('open', () => {
-        app.listen(PORT, () => {
-            console.log(`API server running on port ${PORT}!`);
-            //TESTING GQL API
-            console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-        });
-    
-    });
+  await server.start();
+  //MIDDLEWARE
+  server.applyMiddleware({ app });
 };
 
+db.once('open', () => {
+  app.listen(PORT, () => {
+    console.log(`API server running on port ${PORT}!`);
 
-
-
-
-//CALL ASYNC TO START THE SERVER
-startApolloServer(typeDefs, resolvers);
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost:27017/budget",
-  {
-    /** useNewUrlParser false by default. Set to `true` to make all connections set the `useUnifiedTopology` option by default */
-    useNewUrlParser: true,
-    /** Set use FindAndModify to `true` to make Mongoose automatically call `createCollection()` on every model created on this connection. */
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-  }
-);
-
-// routes
-app.use(require("./routes"));
+  });
 
 });
 
 
-app.listen(PORT, () => {
-  console.log(`🌍 Connected on port ${PORT}!`);
-});
+//LOG MONGO QUERIES EXECUTED-MOVED TO CONFIG CONNECTION 

@@ -31,7 +31,7 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
-    thoughts(username: String): [Startbein]
+    startbeins(username: String): [Startbein]
     startbein(_id: ID!): Startbein
   }
 
@@ -60,7 +60,7 @@ const typeDefs = gql`
   type Auth {
     token: ID!
     user: User
-}
+  }
 
 `;
 

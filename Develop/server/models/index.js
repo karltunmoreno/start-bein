@@ -1,5 +1,5 @@
 //TYPICAL ACROSS PROJECTS
 const User = require('./User');
-const Startbein = rquire('./Startbein');
+const Startbein = require('./Startbein');
 
 module.exports = { User, Startbein };

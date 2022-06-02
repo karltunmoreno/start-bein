@@ -1,11 +1,5 @@
-//BUDGET TRACKER
-
-// module.exports = {
-//     Transaction: require("./Transaction")
-// }
-
-//GOOGLEBOOKS
-
+//TYPICAL ACROSS PROJECTS
 const User = require('./User');
+const Startbein = rquire('./Startbein');
 
-module.exports = { User };
+module.exports = { User, Startbein };

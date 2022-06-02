@@ -11,7 +11,7 @@ export default function VolunteerInfo({firstName, lastName,username,email,addres
         <p>State: <span>{state}</span></p>
         <p>City: <span>{city}</span></p>
         <p>Date: <span>{date}</span></p>
-        <p>Voluntary: <span>{chosenVoluntary}</span></p>
+        <p>Volunteer Option: <span>{chosenVoluntary}</span></p>
     </div>
   )
 }

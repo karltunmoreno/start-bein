@@ -4,7 +4,7 @@
 const bcrypt = require('bcrypt');
 
 //IMPORT THE PARTS NEEDED FROM THE MONGOOSE LIB
-const { Schema, model, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 //UNIQUE VALIDATOR FROM https://www.codegrepper.com/code-examples/javascript/mongoose+required+unique+validator
 // var mongoose = require('mongoose');
@@ -46,23 +46,25 @@ const userSchema = new Schema(
         startbeins: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Start'
+                ref: 'Startbein'
             }
         ],
-        //THIS IS SIMILAR TO 'COMMENTS' IN 'PIZZA HUNT' OR 'REACTIONS' IN DEEP-THOUGHTS
-        contributes: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'Contribute'
-            }
-        ],
-        //THIS IS NEW TO MAKE OUR OWN "CURRENCY" OR POINTS BASED ON USER INTERACTION-CHILD TO USER
-        savedBeins: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'User'
-            }
-        ],
+        //REMOVED TO SIMPLIFY
+        // contributes: [
+        //     {
+        //         type: Schema.Types.ObjectId,
+        //         ref: 'Contribute'
+        //     }
+        // ],
+        // //THIS IS A FUTURE IDEA TO MAKE OUR OWN "CURRENCY" OR POINTS BASED ON USER INTERACTION-CHILD TO USER
+        // savedBeins: [
+        //     {
+        //         type: Schema.Types.ObjectId,
+        //         ref: 'User'
+        //     }
+        // ],
+
+    
         friends: [
             {
                 type: Schema.Types.ObjectId,
@@ -76,7 +78,7 @@ const userSchema = new Schema(
             virtuals: true
         },
         //MONGOOSE RETURNS THIS VIRTUAL SO THE ID IS NA
-        id: false
+        // id: false
     }
 
 );
@@ -99,23 +101,22 @@ userSchema.methods.isCorrectPassword = async function (password) {
 //QUERY A USER AND RECEIVE COUNTS FOR OUR SCHEMAS THAT ARE VIRTUALS - 
 
 //BEINS ARE BASED ON GOOGLEBOOKS USER MODEL FOR BOOK SCHEMA - SAVEDBOOKS=SAVED BEINS- SO ANY SAVED RESOURCES FROM VOLUNTEER GROUPS OR ORG TO DONATE WOULD MAKE A BEIN COUNT? - OR IT COULD BE BASED ON OTHER USER REACTIONS TO OUR STARTS AND CONTRIBUTIONS
-userSchema.virtual('beinCount').get(function () {
-    return this.savedStartbeins.length;
-});
+// userSchema.virtual('beinCount').get(function () {
+//     return this.savedStartbeins.length;
+// });
 
 //FRIENDS - TYPICAL
 userSchema.virtual('friendCount').get(function () {
     return this.friends.length;
 });
 
-//ADD VIRTUAL TO COUNT AND TRACK NUMBER OF STARTS AND LINKED CONTRIBUTES MADE ON RETRIEVAL TEST
-<<<<<<< HEAD
-UserSchema.virtual('startbeinCount').get(function () {
-    return this.startbeins.reduce((total, startbein) => total + startbein.contributes.length + 1, 0);
-=======
+//REMOVED TO SIMPLIFY ADD VIRTUAL TO COUNT AND TRACK NUMBER OF STARTS AND LINKED CONTRIBUTES MADE ON RETRIEVAL TEST
+// userSchema.virtual('startbeinCount').get(function () {
+//     return this.startbeins.reduce((total, startbein) => total + startbein.contributes.length + 1, 0);
+// });
+
 userSchema.virtual('startCount').get(function () {
     return this.starts.reduce((total, thought) => total + start.contributes.length + 1, 0);
->>>>>>> 65502bdb1543825e1ef1dad8be889f553573fca0
 });
 
 //MAKE THE MODEL

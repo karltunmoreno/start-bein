@@ -33,13 +33,13 @@ export default function Page() {
     return (
     <Fragment>
         <div className={classes.imageContainer}> 
-        <img src={require("../static/tree.png")} alt="tree" />
-        <img src={require("../static/park.png")} alt="park" />
-        <img src={require("../static/beach.jpg")} alt="beach" />
+        <img src={require("./static/tree.png")} alt="tree" />
+        <img src={require("./static/park.png")} alt="park" />
+        <img src={require("./static/beach.jpg")} alt="beach" />
 
 
         </div>
-        <main className={classes.mainContainer}> hello</main>
+        <main className={classes.mainContainer}> Welcome to the volunteer schedular! Here you can choose someething to contribute to and what day you would like to do it. Fill out the form to get started!</main>
         <div className={classes.Bottom}>
             <div className={classes.submitContainer}>
                 {submits.map((m,i)=>{
@@ -62,7 +62,7 @@ export default function Page() {
                     <TextField required inputRef={lastName} outlined  label="last name"/>
                     <TextField required inputRef={username} outlined  label="username"/>
                     <TextField required inputRef={email} outlined type="email" label="email"/>
-                    <TextField required inputRef={address} style={{width:"227px"}} outlined textarea type="text" label="Address"/>
+                    <TextField required inputRef={address} style={{width:"227px"}} outlined textarea type="text" label="Zip Code"/>
                     <TextField required inputRef={state} outlined label='state' />
                     <TextField required inputRef={city} outlined label='city' />
                 <div style={{gap:"10px",display:"flex",justifyContent:"space-between",flexWrap:"wrap",width:"100%",alignItems:"center",padding:"10px"}}>

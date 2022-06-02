@@ -1,36 +1,36 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_THOUGHTS = gql`
-  query thoughts($username: String) {
-    thoughts(username: $username) {
+export const QUERY_STARTBEINS = gql`
+  query startbeins($username: String) {
+    startbeins(username: $username) {
       _id
-      thoughtText
+      startbeinText
       createdAt
       username
-      reactionCount
-      reactions {
+      contributeCount
+      contributes {
         _id
         createdAt
         username
-        reactionBody
+        contributeBody
       }
     }
   }
 `;
 
-export const QUERY_THOUGHT = gql`
-  query thought($id: ID!) {
-    thought(_id: $id) {
+export const QUERY_startbein = gql`
+  query startbein($id: ID!) {
+    startbein(_id: $id) {
       _id
-      thoughtText
+      startbeinText
       createdAt
       username
-      reactionCount
-      reactions {
+      contributeCount
+      contributes {
         _id
         createdAt
         username
-        reactionBody
+        contributeBody
       }
     }
   }
@@ -47,11 +47,11 @@ export const QUERY_USER = gql`
         _id
         username
       }
-      thoughts {
+      startbeins {
         _id
-        thoughtText
+        startbeinText
         createdAt
-        reactionCount
+        contributeCount
       }
     }
   }
@@ -64,15 +64,15 @@ export const QUERY_ME = gql`
       username
       email
       friendCount
-      thoughts {
+      startbeins {
         _id
-        thoughtText
+        startbeinText
         createdAt
-        reactionCount
-        reactions {
+        contributeCount
+        contributes {
           _id
           createdAt
-          reactionBody
+          contributeBody
           username
         }
       }

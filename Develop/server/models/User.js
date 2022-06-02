@@ -7,11 +7,11 @@ const bcrypt = require('bcrypt');
 const { Schema, model, Types } = require('mongoose');
 
 //UNIQUE VALIDATOR FROM https://www.codegrepper.com/code-examples/javascript/mongoose+required+unique+validator
-var mongoose = require('mongoose');
-    // var uniqueValidator = require('mongoose-unique-validator');
+// var mongoose = require('mongoose');
+// var uniqueValidator = require('mongoose-unique-validator');
 
-    // var mySchema = mongoose.Schema(/* put your schema definition here */);
-    // mySchema.plugin(uniqueValidator);
+// var mySchema = mongoose.Schema(/* put your schema definition here */);
+// mySchema.plugin(uniqueValidator);
 
 //EMAIL VALIDATOR STATEMENTS FROM https://www.codegrepper.com/code-examples/whatever/mongoose+validate+match+regex
 var validateEmail = function (email) {
@@ -42,14 +42,14 @@ const userSchema = new Schema(
             required: true,
             minlength: 4
         },
-        //THIS IS SIMILAR TO 'PIZZA' IN 'PIZZA HUNT'
-        starts: [
+        //THIS IS SIMILAR TO 'THOUGHTS'
+        startbeins: [
             {
                 type: Schema.Types.ObjectId,
                 ref: 'Start'
             }
         ],
-        //THIS IS SIMILAR TO 'COMMENTS' IN 'PIZZA HUNT'
+        //THIS IS SIMILAR TO 'COMMENTS' IN 'PIZZA HUNT' OR 'REACTIONS' IN DEEP-THOUGHTS
         contributes: [
             {
                 type: Schema.Types.ObjectId,
@@ -100,7 +100,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
 
 //BEINS ARE BASED ON GOOGLEBOOKS USER MODEL FOR BOOK SCHEMA - SAVEDBOOKS=SAVED BEINS- SO ANY SAVED RESOURCES FROM VOLUNTEER GROUPS OR ORG TO DONATE WOULD MAKE A BEIN COUNT? - OR IT COULD BE BASED ON OTHER USER REACTIONS TO OUR STARTS AND CONTRIBUTIONS
 userSchema.virtual('beinCount').get(function () {
-    return this.savedBeins.length;
+    return this.savedStartbeins.length;
 });
 
 //FRIENDS - TYPICAL
@@ -108,13 +108,11 @@ userSchema.virtual('friendCount').get(function () {
     return this.friends.length;
 });
 
-//ADD VIRTUAL TO COUNT AND TRACK NUMBER OF STARTS AND LINKED CONTRIBUTES MADE ON RETRIEVAL TEST
-userSchema.virtual('startCount').get(function () {
-    return this.starts.reduce((total, thought) => total + start.contributes.length + 1, 0);
-});
+
 
 //MAKE THE MODEL
 const User = model('User', userSchema);
 //EXPORT
+
 module.exports = User;
 

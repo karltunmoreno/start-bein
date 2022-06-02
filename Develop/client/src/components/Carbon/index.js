@@ -1,22 +1,7 @@
-<<<<<<< HEAD
-import React from 'react';
-// import coverImage from "../../assets/cover/cover-image.jpg";
-
-function Carbon() {
-    return (
-        <section>
-            <h1 id="carbon">Your Carbon Footprint</h1>
-
-        </section>
-    );
-}
-
-export default Carbon;
-=======
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import Thermostat from "../Thermostat/index.js";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import coverImage from "../../assets/images/logo370.png";
 
 // Do something else...
@@ -74,4 +59,3 @@ function Carbon() {
 //ReactDOM.render(<App />, document.getElementById("root"));
 
 export default Carbon;
->>>>>>> 7d388f671160b448ea5c2fb81b8ac5c48d83b113

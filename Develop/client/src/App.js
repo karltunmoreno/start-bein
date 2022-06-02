@@ -1,58 +1,56 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 5821c70005e9ce5ca521407b7d247e792ef9a27d
+import React from 'react';
+//IMPORT CLIENT SIDE APOLLO
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+//IMPORT STYLING
+import logo from './logo.png';
 import './App.css';
-import Page from './components/Volunteer/Page';
+//IMPORT COMPONENTS
+import Page from './components/Donate/index';
+import About from './components/About/index';
+import Carbon from './components/Carbon/index';
+import Form from './components/Form/index';
+import Thermostat from './components/Thermostat/index';
+import Volunteer from './components/Volunteer/index';
+
+const httpLink = createHttpLink({
+  uri: 'http://localhost:3001/graphql',
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <div className="App">
-      <Page />
-    </div>
-=======
-import logo from "./logo.png";
-import "./App.css";
-import About from "./components/About/index";
-import Carbon from "./components/Carbon/index";
-import Thermostat from "./components/Thermostat/index";
-import Form from "./components/Form/index";
-import Footer from "./components/Footer/index";
-
-function App() {
-  return (
-    (
+    <ApolloProvider client={client}>
       <nav>
         <li>
-          <a>Carbon</a>
+          <a>
+            Carbon
+          </a>
         </li>
-      </nav>
-    ),
-    (
+      </nav>,
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="happy bein bumble bee" />
-          <p>
-            Start bein!
-            <span>
-              <br />
-              Sign up today!
-            </span>
-          </p>
+          <div>
+            <img src={logo} className="App-logo" alt="happy bein bumble bee" />
+            <p>Start bein!<span>
+              <br />Sign up today!</span>
+            </p>
+          </div>
         </header>
-
-        <About></About>
-        <Carbon></Carbon>
-
-        <Form></Form>
-        <Thermostat></Thermostat>
-
-        <Footer></Footer>
+        <div>
+          <Page />
+          <About />
+          <Carbon />
+        </div>
+        
       </div>
-    )
->>>>>>> 7d388f671160b448ea5c2fb81b8ac5c48d83b113
+    </ApolloProvider>
   );
+  // >>>>>>> 7d388f671160b448ea5c2fb81b8ac5c48d83b113
+  //   );
 }
 
 export default App;

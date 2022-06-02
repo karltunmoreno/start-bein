@@ -33,7 +33,7 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
-    thoughts(username: String): [Startbein]
+    startbeins(username: String): [Startbein]
     startbein(_id: ID!): Startbein
   }
 
@@ -58,10 +58,6 @@ const typeDefs = gql`
       friendId: ID!
       ): User
   }
-  // type Mutation {
-  //   login(email: String!, password: String!): Auth
-  //   addUser(username: String!, email: String!, password: String!): Auth
-  // }
 
   type Auth {
     token: ID!

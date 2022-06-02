@@ -1,9 +1,14 @@
+*{
+  /* background-color: rgba(235,216,120, .2); */
+}
+
 .App {
   text-align: center;
+ 
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -15,7 +20,7 @@
 
 .App-header {
   background-color: rgb(186, 245, 240);
-  min-height: 50vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,6 +35,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .donatehero {

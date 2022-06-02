@@ -3,35 +3,8 @@ import ReactDOM from "react-dom";
 import Thermostat from "../Thermostat/index.js";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import coverImage from "../../assets/images/logo370.png";
+import Form from '../Form/index';
 
-// Do something else...
-
-//api call here
-//  curl -i "http://api.waqi.info/feed/shanghai/?token=demo"
-
-// {
-//    status: "ok",
-//    data: {
-//       aqi: 70,
-//       time: {
-//          s: "2022-06-01 09:00:00"
-//       }
-//       city: {
-//          name: "Shanghai",
-//          url: "http://aqicn.org/city/shanghai/",
-//          geo: [
-//             "31.2047372",
-//             "121.4489017"
-//          ]
-//       }
-//       iaqi: {
-//          pm25: "..."
-//       }
-//    }
-// }
-//.then(data)
-
-//});
 
 function Carbon() {
   return (
@@ -51,6 +24,9 @@ function Carbon() {
           <p>//data.response//</p>
           <br></br>
         </p>
+      </div>
+      <div>
+        <Form />
       </div>
     </section>
   );

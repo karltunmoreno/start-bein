@@ -30,43 +30,16 @@ const typeDefs = gql`
   }
 
   type Query {
-    me: User
     users: [User]
     user(username: String!): User
-    thoughts(username: String): [Startbein]
+    startbeins(username: String): [Startbein]
     startbein(_id: ID!): Startbein
   }
 
   type Mutation {
-    login(
-      email: String!, 
-      password: String!
-      ): Auth
-    addUser(
-      username: String!, 
-      email: String!, 
-      password: String!
-      ): Auth
-    addStartbein(
-      startbeinText: String!
-      ): Startbein
-    addContribute(
-      startbeinId: ID!, 
-      contributeBody: String!
-      ): Startbein
-    addFriend(
-      friendId: ID!
-      ): User
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
   }
-  // type Mutation {
-  //   login(email: String!, password: String!): Auth
-  //   addUser(username: String!, email: String!, password: String!): Auth
-  // }
-
-  type Auth {
-    token: ID!
-    user: User
-}
 
 `;
 

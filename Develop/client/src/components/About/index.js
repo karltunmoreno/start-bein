@@ -6,12 +6,14 @@ import React, { useState } from 'react';
 import { validateEmail } from '../../utils/helpers';
 
 import coverImage from "../../assets/cover/cover-image.jpg";
-
+{/* < img src={coverImage} className="my-2" style={{ width: "100%", opacity: 0.4 }} alt="purple water lily" /> */ }
 function About() {
     return (
         <section>
-            <h1 id="about">Who are we?</h1>
-            <img src={coverImage} className="my-2" style={{ width: "100%", opacity: 0.4 }} alt="purple water lily" />
+            <div className="abouthero">
+                <h1 id="about">Who are we?</h1>
+                <p>A CONTRIBUTORS BLOG . Time to make the world a better place now and for the future. Contribute your comment and respond to the conversation as well. This community environment ignites same like minded individuals to engage and find solutions for the earth. Together, we can change the world with start being.</p>
+            </div>
         </section>
     );
 }

@@ -5,10 +5,11 @@ import Thermostat from "../Thermostat/index.js";
 import coverImage from "../../assets/images/logo370.png";
 import Form from '../Form/index';
 
-
+// import coverImage from "../../assets";
+{/* < img src={coverImage} className="my-2" style={{ width: "100%", opacity: 0.4 }} alt="purple water lily" /> */ }
 function Carbon() {
   return (
-    <section className="my-5">
+    <section className="abouthero">
       <h1 id="about">Carbon</h1>
       <img
         src={coverImage}
@@ -21,7 +22,7 @@ function Carbon() {
           Contribute to making the world a better place to live. Together, lets
           lower emmissions and make the planet a more blue and cleaner place.
           <br></br>
-          <p>//data.response//</p>
+          
           <br></br>
         </p>
       </div>

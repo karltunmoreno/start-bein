@@ -5,15 +5,30 @@ import React, { useState } from 'react';
 //MUST IMPORT VALIDATE HELPER
 import { validateEmail } from '../../utils/helpers';
 
-import coverImage from "../../assets/cover/cover-image.jpg";
-{/* < img src={coverImage} className="my-2" style={{ width: "100%", opacity: 0.4 }} alt="purple water lily" /> */ }
+import { useQuery } from '@apollo/client';
+import { QUERY_STARTBEINS } from '../../utils/queries';
+
 function About() {
+    //USEQUERY HOOK TO MAKE QUERY REQUEST
+    const { loading, data } = useQuery(QUERY_STARTBEINS);
+    //GET THE STARTBEIN OUT OF THE QUERY
+    const startbeins = data?.startbeins || [];
+    console.log(startbeins);
+
     return (
         <section>
-            <div className="abouthero">
-                <h1 id="about">Who are we?</h1>
-                <p>A CONTRIBUTORS BLOG . Time to make the world a better place now and for the future. Contribute your comment and respond to the conversation as well. This community environment ignites same like minded individuals to engage and find solutions for the earth. Together, we can change the world with start being.</p>
-            </div>
+            <h1 id="about">Who are we?</h1>
+            <p className="abouttext">A CONTRIBUTORS BLOG . Time to make the world a better place now and for the future. Contribute your comments and sign up to take action. This community environment ignites same like minded individuals to engage and find solutions for the earth. Start bein to change the world one bein in time!</p>
+
+            <main>
+
+                <div className="abouthero">
+                    <div className='flex-row justify-space-between'>
+                        <div className='col-12 mb-3'>{/* PRINT STARTBEIN LIST */}</div>
+                    </div>
+
+                </div>
+            </main>
         </section>
     );
 }

@@ -15,38 +15,34 @@ import Footer from './components/Footer/index';
 import PageContainer from './components/PageContainer';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+    uri: 'http://localhost:3001/graphql',
 });
 
 const client = new ApolloClient({
-  link: httpLink,
-  cache: new InMemoryCache(),
+    link: httpLink,
+    cache: new InMemoryCache(),
 });
 
 function App() {
-  return (
-    <ApolloProvider client={client}>
-      
-      <div className="App">
-        <header className="App-header">
-          <div>
-            <img src={logo} className="App-logo" alt="happy bein bumble bee" />
-            <p>Start bein!<span> Sign up today!</span>
-            </p>
-          </div>
-        </header>
-        <div className="container">
-          
-        </div>
-      
-        <PageContainer />
-    
-        <Footer />
-      </div>
-    </ApolloProvider>
-  );
-  // >>>>>>> 7d388f671160b448ea5c2fb81b8ac5c48d83b113
-  //   );
+    return (
+        <ApolloProvider client={client}>
+
+            <div className="App">
+                <header className="App-header">
+                    <div>
+                        <img src={logo} className="App-logo" alt="happy bein bumble bee" />
+                        <p>Start bein!<span> Sign up today!</span>
+                        </p>
+                    </div>
+                </header>
+            </div>
+            <PageContainer />
+            <Footer />
+
+        </ApolloProvider>
+    );
+    // >>>>>>> 7d388f671160b448ea5c2fb81b8ac5c48d83b113
+    //   );
 }
 
 export default App;

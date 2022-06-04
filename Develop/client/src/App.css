@@ -46,15 +46,17 @@
   min-height: 80vh;
   background-image: url("../src/assets/cover/cover-image.jpg");
   background-size: cover;
-  opacity: .6;
+  opacity: .6
+  ;
   display: flex;
   color: #ffff;
   font-size: xx-large;
-  text-shadow: 3px 2px black;
+  font-weight: bolder;
+  text-shadow: 5px 2px black;
   justify-content: center;
   padding: 10vw;
   align-items: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+  box-shadow: 0 0 20px rgba(1, 1, 1, 1);
 
 }
 

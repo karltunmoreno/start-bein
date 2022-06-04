@@ -7,6 +7,7 @@ import { validateEmail } from '../../utils/helpers';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_STARTBEINS } from '../../utils/queries';
+import StartbeinList from '../StartbeinList/index';
 
 function About() {
     //USEQUERY HOOK TO MAKE QUERY REQUEST
@@ -17,14 +18,20 @@ function About() {
 
     return (
         <section>
-            <h1 id="about">Who are we?</h1>
+            <h1 id="about">Let's get started!</h1>
             <p className="abouttext">A CONTRIBUTORS BLOG . Time to make the world a better place now and for the future. Contribute your comments and sign up to take action. This community environment ignites same like minded individuals to engage and find solutions for the earth. Start bein to change the world one bein in time!</p>
 
             <main>
 
                 <div className="abouthero">
                     <div className='flex-row justify-space-between'>
-                        <div className='col-12 mb-3'>{/* PRINT STARTBEIN LIST */}</div>
+                        <div className='col-12 mb-3'>
+                            {loading ? (
+                                <div>Loading...</div>
+                            ) : (
+                                <StartbeinList startbeins={startbeins} title="Some Feed for Start(s)..." />
+                            )}
+                        </div>
                     </div>
 
                 </div>

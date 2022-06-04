@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import NavTabs from './NavTabs';
+// import Nav from './Nav/index';
+import NavTabs from './NavTabs'
 import About from './About/index';
 import Carbon from './Carbon/index';
 import Volunteer from './Volunteer/Page';

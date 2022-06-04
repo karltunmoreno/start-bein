@@ -2,18 +2,18 @@
 const faker = require('faker');
 
 const db = require('../config/connection');
-const { User } = require('../models');
+const { Startbein, User } = require('../models');
 
 db.once('open', async () => {
+    await Startbein.deleteMany({});
     await User.deleteMany({});
 
-    //CREATE USER DATA
     //CREATE USER DATA
     const userData = [];
 
     for (let i = 0; i < 50; i += 1) {
         const username = faker.internet.userName();
-        const email = faker.internt.email(username);
+        const email = faker.internet.email(username);
         const password = faker.internet.password();
 
         userData.push({ username, email, password });
@@ -36,22 +36,22 @@ db.once('open', async () => {
         await User.updateOne({ _id: userId }, { $addToSet: { friends: friendId } });
     }
 
-    //STARTS
-    let createdStarts = [];
+    //STARTBEINS
+    let createdStartbeins = [];
     for (let i = 0; i < 100; i += 1) {
-        const startText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+        const startbeinText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
         const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
         const { username, _id: userId } = createdUsers.ops[randomUserIndex];
 
-        const createdStart = await Start.create({ startText, username });
+        const createdStartbein = await Startbein.create({ startbeinText, username });
 
         const updatedUser = await User.updateOne(
             { _id: userId },
-            { $push: { starts: createdStart._id } }
+            { $push: { startbeins: createdStartbein._id } }
         );
 
-        createdStarts.push(createdStart);
+        createdStartbeins.push(createdStartbein);
     }
 
     //CONTRIBUTES
@@ -61,12 +61,12 @@ db.once('open', async () => {
         const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
         const { username } = createdUsers.ops[randomUserIndex];
 
-        const randomStartIndex = Math.floor(Math.random() * createdStarts.length);
-        const { _id: startId } = createdStarts[randomStartIndex];
+        const randomStartbeinIndex = Math.floor(Math.random() * createdStartbeins.length);
+        const { _id: startbeinId } = createdStartbeins[randomStartbeinIndex];
 
-        await Start.updateOne(
-            { _id: startId },
-            { $push: { contributes: { reactionBody, username } } },
+        await Startbein.updateOne(
+            { _id: startbeinId },
+            { $push: { contributes: { contributeBody, username } } },
             { runValidators: true }
         );
     }

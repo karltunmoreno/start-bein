@@ -113,6 +113,7 @@
   background-color: rgba(238, 207, 188, .5);
   margin: 1vh;
   border: 1px solid rgba(0, 0, 0, 1);
+  padding: 1vh;
   border-radius: 5%;
   transition: all 300ms;
 }
@@ -122,6 +123,10 @@
   transition: all 300ms;
   box-shadow: 0 0 2px rgba(0, 0, 0, 1);
   background-color: rgba(238, 207, 188, 1);
+}
+
+.donoAbout {
+  width: 40%;
 }
 
 @keyframes App-logo-spin {

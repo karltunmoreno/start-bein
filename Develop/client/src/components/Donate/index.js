@@ -45,13 +45,24 @@ function Donate(props) {
           <h1> Start changing the world step by step!</h1>
         </div>
         <div className="donosection">
-          <h2>Make your donation.</h2>
-          <div className="donos">
-            <button id="5dono" data-checkout-mode="payment" data-price-id="price_1L5elJAV5DZ272v6oqn2jDAA" onClick={stripeCheckout}>$5 Donation!</button>
-            <button id="10dono" data-checkout-mode="payment" data-price-id="price_1L5wa8AV5DZ272v6x3qqTTSU" onClick={stripeCheckout}>$10 Donation!</button>
-            <button id="50dono" data-checkout-mode="payment" data-price-id="price_1L5wcXAV5DZ272v6TOtIsjVg" onClick={stripeCheckout}>$50 Donation!</button>
+          <div>
+            <h2>Make your donation.</h2>
+            <div className="donos">
+              <button id="5dono" data-checkout-mode="payment" data-price-id="price_1L5elJAV5DZ272v6oqn2jDAA" onClick={stripeCheckout}>$5 Donation!</button>
+              <button id="10dono" data-checkout-mode="payment" data-price-id="price_1L5wa8AV5DZ272v6x3qqTTSU" onClick={stripeCheckout}>$10 Donation!</button>
+              <button id="50dono" data-checkout-mode="payment" data-price-id="price_1L5wcXAV5DZ272v6TOtIsjVg" onClick={stripeCheckout}>$50 Donation!</button>
+              <div id="error-message"></div>
           </div>
-          <div id="error-message"></div>
+          </div>
+
+          <div className="donoAbout">
+            <h2>Why you should donate...</h2>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+             dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            </p>
+          </div>
         </div>
     </section>
   );

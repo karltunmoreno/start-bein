@@ -1,6 +1,8 @@
 import React from 'react';
 //IMPORT CLIENT SIDE APOLLO
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+//IMPORT ROUTING 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //IMPORT STYLING
 import logo from './logo.png';
 import './App.css';
@@ -10,9 +12,9 @@ import About from './components/About/index';
 import Carbon from './components/Carbon/index';
 import Form from './components/Form/index';
 import Thermostat from './components/Thermostat/index';
-// import Volunteer from './components/Volunteer/Page';
+import Volunteer from './components/Volunteer/Page';
 import Footer from './components/Footer/index';
-import PageContainer from './components/PageContainer';
+// import PageContainer from './components/PageContainer';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -26,8 +28,9 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-
+      
       <div className="App">
+        
         <header className="App-header">
           <div>
             <img src={logo} className="App-logo" alt="happy bein bumble bee" />
@@ -38,9 +41,10 @@ function App() {
         <div className="container">
 
         </div>
-
-        <PageContainer />
-
+        <About />
+        <Carbon />
+        <Page />
+        <Volunteer />
         <Footer />
       </div>
     </ApolloProvider>
